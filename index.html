@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsualizador de Miniaturas de YouTube</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">📺 YouTube Thumbnail Preview</h1>
+            </div>
+        </header>
+
+        <!-- Control Panel -->
+        <section class="control-panel">
+            <div class="panel-content">
+                <div class="upload-section">
+                    <label for="thumbnailUpload" class="upload-label">
+                        <span class="upload-icon">📷</span>
+                        <span>Subir Miniatura</span>
+                    </label>
+                    <input type="file" id="thumbnailUpload" accept="image/*" class="file-input">
+                    <div class="preview-upload" id="previewUpload">
+                        <p>Ninguna imagen seleccionada</p>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="videoTitle">Título del Video</label>
+                    <input type="text" id="videoTitle" placeholder="Ej: Cómo crear una miniatura increíble en 5 minutos" maxlength="100">
+                    <span class="char-count"><span id="titleCount">0</span>/100</span>
+                </div>
+
+                <div class="input-group">
+                    <label for="channelName">Nombre del Canal</label>
+                    <input type="text" id="channelName" placeholder="Ej: Mi Canal Creativo" maxlength="50">
+                    <span class="char-count"><span id="channelCount">0</span>/50</span>
+                </div>
+
+                <div class="upload-section">
+                    <label for="channelIconUpload" class="upload-label channel-icon-label">
+                        <span class="upload-icon">👤</span>
+                        <span>Subir Icono del Canal</span>
+                    </label>
+                    <input type="file" id="channelIconUpload" accept="image/*" class="file-input">
+                    <div class="preview-upload preview-channel-icon" id="previewChannelIcon">
+                        <p>Ningún icono seleccionado</p>
+                        <small>El icono se guardará automáticamente</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preview Section -->
+        <section class="preview-section">
+            <div class="preview-container">
+                <!-- Desktop Home Large -->
+                <div class="preview-card">
+                    <h2 class="preview-title">🖥️ Home Large (Desktop)</h2>
+                    <div class="preview-wrapper" data-size="large">
+                        <div class="youtube-card large-card">
+                            <div class="thumbnail-wrapper" style="width: 320px; height: 180px;">
+                                <img id="thumbLarge" src="" alt="Thumbnail" class="thumbnail-img">
+                                <div class="duration-badge">10:45</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="channel-avatar" id="avatarLarge">
+                                    <img class="avatar-img" src="" alt="Channel Icon">
+                                    <span class="avatar-fallback">C</span>
+                                </div>
+                                <div class="video-details">
+                                    <h3 class="video-title" id="titleLarge">Tu título aparecerá aquí</h3>
+                                    <p class="channel-name" id="channelLarge">Nombre del Canal</p>
+                                    <div class="video-stats">
+                                        <span>1.2M vistas</span>
+                                        <span>•</span>
+                                        <span>hace 2 días</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 320 × 180px</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Home Small -->
+                <div class="preview-card">
+                    <h2 class="preview-title">🖥️ Home Small (Desktop)</h2>
+                    <div class="preview-wrapper" data-size="small">
+                        <div class="youtube-card small-card">
+                            <div class="thumbnail-wrapper" style="width: 320px; height: 180px;">
+                                <img id="thumbSmall" src="" alt="Thumbnail" class="thumbnail-img">
+                                <div class="duration-badge">10:45</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="channel-avatar" id="avatarSmall">
+                                    <img class="avatar-img" src="" alt="Channel Icon">
+                                    <span class="avatar-fallback">C</span>
+                                </div>
+                                <div class="video-details">
+                                    <h3 class="video-title" id="titleSmall">Tu título aparecerá aquí</h3>
+                                    <p class="channel-name" id="channelSmall">Nombre del Canal</p>
+                                    <div class="video-stats">
+                                        <span>1.2M vistas</span>
+                                        <span>•</span>
+                                        <span>hace 2 días</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 320 × 180px</p>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="preview-card">
+                    <h2 class="preview-title">📌 Sidebar (Barra Lateral)</h2>
+                    <div class="preview-wrapper" data-size="sidebar">
+                        <div class="youtube-card sidebar-card">
+                            <div class="thumbnail-wrapper" style="width: 168px; height: 94px;">
+                                <img id="thumbSidebar" src="" alt="Thumbnail" class="thumbnail-img">
+                                <div class="duration-badge small-badge">10:45</div>
+                            </div>
+                            <div class="video-info-horizontal">
+                                <div class="video-details-compact">
+                                    <h3 class="video-title-compact" id="titleSidebar">Tu título aparecerá aquí</h3>
+                                    <p class="channel-name-compact" id="channelSidebar">Nombre del Canal</p>
+                                    <div class="video-stats-compact">
+                                        <span>1.2M vistas</span>
+                                        <span>•</span>
+                                        <span>hace 2 días</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 168 × 94px</p>
+                    </div>
+                </div>
+
+                <!-- Mobile Home -->
+                <div class="preview-card">
+                    <h2 class="preview-title">📱 Mobile Home</h2>
+                    <div class="preview-wrapper" data-size="mobile">
+                        <div class="mobile-container">
+                            <div class="youtube-card mobile-card">
+                                <div class="thumbnail-wrapper" style="width: 360px; height: 202px;">
+                                    <img id="thumbMobile" src="" alt="Thumbnail" class="thumbnail-img">
+                                    <div class="duration-badge">10:45</div>
+                                </div>
+                                <div class="video-info">
+                                    <div class="channel-avatar" id="avatarMobile">
+                                        <img class="avatar-img" src="" alt="Channel Icon">
+                                        <span class="avatar-fallback">C</span>
+                                    </div>
+                                    <div class="video-details">
+                                        <h3 class="video-title" id="titleMobile">Tu título aparecerá aquí</h3>
+                                        <p class="channel-name" id="channelMobile">Nombre del Canal</p>
+                                        <div class="video-stats">
+                                            <span>1.2M vistas</span>
+                                            <span>•</span>
+                                            <span>hace 2 días</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 360 × 202px</p>
+                    </div>
+                </div>
+
+                <!-- Mobile Suggested -->
+                <div class="preview-card">
+                    <h2 class="preview-title">📱 Mobile Suggested</h2>
+                    <div class="preview-wrapper" data-size="mobile-suggested">
+                        <div class="mobile-container">
+                            <div class="youtube-card mobile-suggested-card">
+                                <div class="thumbnail-wrapper" style="width: 168px; height: 94px;">
+                                    <img id="thumbMobileSuggested" src="" alt="Thumbnail" class="thumbnail-img">
+                                    <div class="duration-badge small-badge">10:45</div>
+                                </div>
+                                <div class="video-info-horizontal">
+                                    <div class="video-details-compact">
+                                        <h3 class="video-title-compact" id="titleMobileSuggested">Tu título aparecerá aquí</h3>
+                                        <p class="channel-name-compact" id="channelMobileSuggested">Nombre del Canal</p>
+                                        <div class="video-stats-compact">
+                                            <span>1.2M vistas</span>
+                                            <span>•</span>
+                                            <span>hace 2 días</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 168 × 94px</p>
+                    </div>
+                </div>
+
+                <!-- TV App -->
+                <div class="preview-card">
+                    <h2 class="preview-title">📺 TV App</h2>
+                    <div class="preview-wrapper" data-size="tv">
+                        <div class="tv-container">
+                            <div class="youtube-card tv-card">
+                                <div class="thumbnail-wrapper" style="width: 426px; height: 240px;">
+                                    <img id="thumbTV" src="" alt="Thumbnail" class="thumbnail-img">
+                                    <div class="duration-badge">10:45</div>
+                                </div>
+                                <div class="video-info">
+                                    <div class="channel-avatar large-avatar" id="avatarTV">
+                                        <img class="avatar-img" src="" alt="Channel Icon">
+                                        <span class="avatar-fallback">C</span>
+                                    </div>
+                                    <div class="video-details">
+                                        <h3 class="video-title tv-title" id="titleTV">Tu título aparecerá aquí</h3>
+                                        <p class="channel-name tv-channel" id="channelTV">Nombre del Canal</p>
+                                        <div class="video-stats tv-stats">
+                                            <span>1.2M vistas</span>
+                                            <span>•</span>
+                                            <span>hace 2 días</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 426 × 240px</p>
+                    </div>
+                </div>
+
+                <!-- Search Results -->
+                <div class="preview-card">
+                    <h2 class="preview-title">🔍 Search Results</h2>
+                    <div class="preview-wrapper" data-size="search">
+                        <div class="youtube-card search-card">
+                            <div class="thumbnail-wrapper" style="width: 320px; height: 180px;">
+                                <img id="thumbSearch" src="" alt="Thumbnail" class="thumbnail-img">
+                                <div class="duration-badge">10:45</div>
+                            </div>
+                            <div class="video-info">
+                                <div class="channel-avatar" id="avatarSearch">
+                                    <img class="avatar-img" src="" alt="Channel Icon">
+                                    <span class="avatar-fallback">C</span>
+                                </div>
+                                <div class="video-details">
+                                    <h3 class="video-title" id="titleSearch">Tu título aparecerá aquí</h3>
+                                    <p class="channel-name" id="channelSearch">Nombre del Canal</p>
+                                    <div class="video-stats">
+                                        <span>1.2M vistas</span>
+                                        <span>•</span>
+                                        <span>hace 2 días</span>
+                                    </div>
+                                    <p class="video-description">Descripción del video que aparece en los resultados de búsqueda...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 320 × 180px</p>
+                    </div>
+                </div>
+
+                <!-- Shorts Shelf -->
+                <div class="preview-card">
+                    <h2 class="preview-title">🎬 Shorts Shelf</h2>
+                    <div class="preview-wrapper" data-size="shorts">
+                        <div class="shorts-container">
+                            <div class="youtube-card shorts-card">
+                                <div class="thumbnail-wrapper shorts-thumb" style="width: 178px; height: 317px;">
+                                    <img id="thumbShorts" src="" alt="Thumbnail" class="thumbnail-img">
+                                    <div class="shorts-badge">SHORTS</div>
+                                    <div class="shorts-views">1.2M</div>
+                                </div>
+                                <div class="shorts-info">
+                                    <h3 class="video-title-shorts" id="titleShorts">Tu título aparecerá aquí</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="size-info">Tamaño: 178 × 317px</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Modal para preview grande -->
+    <div class="modal-overlay" id="previewModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle"></h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Contenido del preview se inserta aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
